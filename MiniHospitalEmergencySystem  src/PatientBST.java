@@ -13,6 +13,11 @@ public class PatientBST {
     }
 
     private Node root;
+    
+public boolean isEmpty() {
+    return root == null;
+}
+
 
     // Insert patient
     public void insert(Patient patient) {

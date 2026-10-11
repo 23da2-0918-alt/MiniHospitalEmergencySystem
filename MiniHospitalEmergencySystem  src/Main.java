@@ -160,21 +160,27 @@ public class Main {
         System.out.println("Patient registered successfully.");
     }
 
-    static void searchPatient() {
+   
+static void searchPatient() {
 
-        System.out.print("Enter Patient ID: ");
-        int id = scanner.nextInt();
-        scanner.nextLine();
-
-        Patient patient = patientBST.search(id);
-
-        if (patient != null) {
-            System.out.println("Patient found:");
-            System.out.println(patient);
-        } else {
-            System.out.println("Patient not found.");
-        }
+    if (patientBST.isEmpty()) {
+        System.out.println("Warning: No patients available to search.");
+        return;
     }
+
+    System.out.print("Enter Patient ID: ");
+    int id = scanner.nextInt();
+    scanner.nextLine();
+
+    Patient patient = patientBST.search(id);
+
+    if (patient != null) {
+        System.out.println("Patient found:");
+        System.out.println(patient);
+    } else {
+        System.out.println("Patient not found.");
+    }
+}
 
     static void deletePatient() {
 
